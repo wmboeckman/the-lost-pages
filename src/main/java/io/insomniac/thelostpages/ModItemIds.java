@@ -10,5 +10,7 @@ public class ModItemIds {
         return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(TheLostPages.MOD_ID, name));
     }
 
+    public static final ResourceKey<Item> ICHOR_BUCKET = create("ichor_bucket");
+
     public static final ResourceKey<Item> SUSPICIOUS_SUBSTANCE = create("suspicious_substance");
 }

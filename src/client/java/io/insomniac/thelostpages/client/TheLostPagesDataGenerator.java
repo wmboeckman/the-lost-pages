@@ -1,20 +1,19 @@
 package io.insomniac.thelostpages.client;
 
-import io.insomniac.thelostpages.ModBlocks;
-import io.insomniac.thelostpages.ModItems;
-import io.insomniac.thelostpages.TheLostPages;
+import io.insomniac.thelostpages.*;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -31,6 +30,7 @@ public class TheLostPagesDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
         pack.addProvider(EnglishLangProvider::new);
+        pack.addProvider(ModFluidTagProvider::new);
         pack.addProvider(ModModelProvider::new);
         pack.addProvider(ModRecipeProvider::new);
     }
@@ -43,8 +43,31 @@ public class TheLostPagesDataGenerator implements DataGeneratorEntrypoint {
 
         @Override
         public void generateTranslations(HolderLookup.Provider holderLookup, TranslationBuilder translationBuilder) {
-            translationBuilder.add("item."+ TheLostPages.MOD_ID +".suspicious_substance", "Suspicious Substance");
             translationBuilder.add("block."+ TheLostPages.MOD_ID +".lost_bookshelf", "Strange Bookshelf");
+
+            translationBuilder.add("block."+ TheLostPages.MOD_ID +".ichor", "Thick Ichor");
+            translationBuilder.add("item."+ TheLostPages.MOD_ID +".ichor_bucket", "Bucket of Ichor");
+
+            translationBuilder.add("item."+ TheLostPages.MOD_ID +".suspicious_substance", "Suspicious Substance");
+        }
+    }
+
+    public static class ModFluidTagProvider extends FabricTagsProvider.FluidTagsProvider {
+
+        public ModFluidTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+            super(output, registryLookupFuture);
+        }
+
+        @Override
+        protected void addTags(HolderLookup.Provider registries) {
+            builder(ModTags.ICHOR)
+                    .add(BuiltInRegistries.FLUID.getResourceKey(ModFluids.THICK_ICHOR_FLOWING).orElseThrow())
+                    .add(BuiltInRegistries.FLUID.getResourceKey(ModFluids.THICK_ICHOR_SOURCE).orElseThrow());
+        }
+
+        @Override
+        public @NonNull String getName() {
+            return "ModFluidTagsProvider";
         }
     }
 
@@ -55,11 +78,15 @@ public class TheLostPagesDataGenerator implements DataGeneratorEntrypoint {
 
         @Override
         public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
+//            blockStateModelGenerator.createTrivialBlock(ModBlocks.THICK_ICHOR, ModelTemplates.);
+
             blockStateModelGenerator.createTrivialBlock(ModBlocks.LOST_BOOKSHELF, TexturedModel.COLUMN_ALT);
         }
 
         @Override
         public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+            itemModelGenerator.generateFlatItem(ModItems.ICHOR_BUCKET, ModelTemplates.FLAT_HANDHELD_ITEM);
+
             itemModelGenerator.generateFlatItem(ModItems.SUSPICIOUS_SUBSTANCE, ModelTemplates.FLAT_ITEM);
         }
 

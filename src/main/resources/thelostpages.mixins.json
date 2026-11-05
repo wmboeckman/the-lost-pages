@@ -1,9 +1,10 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "io.insomniac.thelostpages.mixin",
+  "package": "io.insomniac.thelostpages.mixins",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "EntityFluidInteractionMixin"
   ],
   "injectors": {
     "defaultRequire": 1

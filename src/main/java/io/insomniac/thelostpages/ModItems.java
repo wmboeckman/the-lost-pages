@@ -6,8 +6,10 @@ import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 
 import java.util.function.Function;
 
@@ -31,6 +33,14 @@ public class ModItems {
         Registry.register(BuiltInRegistries.ITEM, itemKey, item);
         return item;
     }
+
+    public static final Item ICHOR_BUCKET = register(
+            ModItemIds.ICHOR_BUCKET,
+            props -> new BucketItem(ModFluids.THICK_ICHOR_SOURCE, props),
+            new Item.Properties()
+                    .craftRemainder(Items.BUCKET)
+                    .stacksTo(1)
+    );
 
     public static final Item SUSPICIOUS_SUBSTANCE = register(ModItemIds.SUSPICIOUS_SUBSTANCE, Item::new, new Item.Properties());
 }

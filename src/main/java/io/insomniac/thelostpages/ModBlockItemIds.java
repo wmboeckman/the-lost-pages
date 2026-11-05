@@ -18,4 +18,6 @@ public class ModBlockItemIds {
     }
 
     public static final BlockItemId LOST_BOOKSHELF = create_block_item("lost_bookshelf");
+
+    public static final ResourceKey<Block> THICK_ICHOR = create_block("ichor");
 }

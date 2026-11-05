@@ -10,6 +10,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
@@ -44,5 +46,11 @@ public class ModBlocks {
             ModBlockItemIds.LOST_BOOKSHELF,
             LostBookshelf::new,
             BlockBehaviour.Properties.of().sound(SoundType.WOOD)
+    );
+
+    public static final Block THICK_ICHOR = register(
+            ModBlockItemIds.THICK_ICHOR,
+            (props) -> new LiquidBlock(ModFluids.THICK_ICHOR_SOURCE, props),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA)
     );
 }
