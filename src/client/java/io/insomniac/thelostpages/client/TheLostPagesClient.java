@@ -1,6 +1,7 @@
 package io.insomniac.thelostpages.client;
 
 import io.insomniac.thelostpages.ModFluids;
+import io.insomniac.thelostpages.TheLostPages;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
 import net.minecraft.client.color.block.BlockTintSources;
@@ -16,12 +17,14 @@ public class TheLostPagesClient implements ClientModInitializer {
         FluidRenderingRegistry.register(
                 ModFluids.THICK_ICHOR_SOURCE,
                 ModFluids.THICK_ICHOR_FLOWING,
+
                 new FluidModel.Unbaked(
-                        new Material(Identifier.withDefaultNamespace("block/lava_still")),
-                        new Material(Identifier.withDefaultNamespace("block/lava_flow")),
-                        new Material(Identifier.withDefaultNamespace("block/lava_overlay")),
-                        BlockTintSources.constant(ARGB.opaque(0x0a1f1c))
+                        new Material(Identifier.fromNamespaceAndPath(TheLostPages.MOD_ID, "block/ichor_still")),
+                        new Material(Identifier.fromNamespaceAndPath(TheLostPages.MOD_ID, "block/ichor_flow")),
+                        new Material(Identifier.fromNamespaceAndPath(TheLostPages.MOD_ID, "block/ichor_overlay")),
+                        BlockTintSources.constant(ARGB.opaque(0x132C3B))
                 )
+
         );
     }
 }
