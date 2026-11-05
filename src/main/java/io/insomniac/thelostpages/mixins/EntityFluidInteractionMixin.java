@@ -53,13 +53,10 @@ public abstract class EntityFluidInteractionMixin {
 
     @Inject(method = "baseTick", at = @At("TAIL"))
     private void thickichor$slowInFluid(CallbackInfo ci) {
-        try (Level level = this.level()) {
+        Level level = this.level();
 
-            if (!this.firstTick && this.fluidInteraction.isInFluid(ModTags.ICHOR)) {
-                this.makeStuckInBlock(level.getBlockState(BlockPos.containing(this.position())), new Vec3(0.3, 0.1, 0.3));
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (!this.firstTick && this.fluidInteraction.isInFluid(ModTags.ICHOR)) {
+            this.makeStuckInBlock(level.getBlockState(BlockPos.containing(this.position())), new Vec3(0.3, 0.1, 0.3));
         }
     }
 }
