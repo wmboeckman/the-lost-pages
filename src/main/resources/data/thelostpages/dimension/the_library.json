@@ -1,0 +1,11 @@
+{
+  "type": "thelostpages:lostlands",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "thelostpages:the_library",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "thelostpages:void"
+    }
+  }
+}

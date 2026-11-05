@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "thelostpages",
+  "version": "${version}",
+  "name": "The Lost Pages",
+  "description": "Once was lost, now set free...",
+  "authors": ["Insomniac_"],
+  "contact": {},
+  "license": "unlicense",
+  "icon": "assets/thelostpages/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "io.insomniac.thelostpages.client.TheLostPagesDataGenerator"
+    ],
+    "client": [
+      "io.insomniac.thelostpages.client.TheLostPagesClient"
+    ],
+    "main": [
+      "io.insomniac.thelostpages.TheLostPages"
+    ],
+    "modmenu": [
+      "io.insomniac.thelostpages.client.TLPModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "thelostpages.mixins.json",
+    {
+      "config": "thelostpages.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
