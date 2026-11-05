@@ -1,11 +1,11 @@
 {
-  "sea_level": 36,
+  "sea_level": 55,
   "aquifers_enabled": false,
   "default_block": {
     "Name": "minecraft:stone"
   },
   "default_fluid": {
-    "Name": "minecraft:water",
+    "Name": "thelostpages:ichor",
     "Properties": {
       "level": "0"
     }

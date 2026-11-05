@@ -26,18 +26,30 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.gamerules.GameRules;
-import net.minecraft.world.level.material.FlowingFluid;
-import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.*;
 import org.jspecify.annotations.NonNull;
 
 import java.util.Optional;
 
 public abstract class ThickIchorFluid extends FlowingFluid {
+
+    public static final BlockBehaviour.Properties blockProperties = BlockBehaviour.Properties.of()
+            .mapColor(MapColor.FIRE)
+            .replaceable()
+            .noCollision()
+            .randomTicks()
+            .strength(100.0F)
+            .lightLevel(_ -> 0)
+            .pushReaction(PushReaction.DESTROY)
+            .noLootTable()
+            .liquid()
+            .sound(SoundType.EMPTY);
+
 
     @Override
     public void animateTick(Level world, BlockPos pos, FluidState state, RandomSource random) {
@@ -55,7 +67,7 @@ public abstract class ThickIchorFluid extends FlowingFluid {
             }
         } else if (random.nextInt(10) == 0) {
             world.addParticle(
-                    ParticleTypes.DUST_PLUME, pos.getX() + random.nextDouble(), pos.getY() + random.nextDouble(),
+                    ParticleTypes.SQUID_INK, pos.getX() + random.nextDouble(), pos.getY() + random.nextDouble(),
                     pos.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
         }
     }
@@ -68,7 +80,6 @@ public abstract class ThickIchorFluid extends FlowingFluid {
     @Override
     protected boolean canConvertToSource(ServerLevel world) {
         return false;
-        //return world.getGameRules().get(GameRules.LAVA_SOURCE_CONVERSION);
     }
 
     @Override
