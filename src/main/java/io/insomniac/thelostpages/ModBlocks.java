@@ -11,6 +11,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -20,6 +21,8 @@ import java.util.function.Function;
 public class ModBlocks {
     public static void initialize() {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((creativeTab) -> {
+            creativeTab.accept(ModBlocks.WET_PULP.asItem());
+            creativeTab.accept(ModBlocks.METAMORPHIC_PULP.asItem());
             creativeTab.accept(ModBlocks.LOST_BOOKSHELF.asItem());
         });
     }
@@ -45,7 +48,25 @@ public class ModBlocks {
     public static final Block LOST_BOOKSHELF = register(
             ModBlockItemIds.LOST_BOOKSHELF,
             LostBookshelf::new,
-            BlockBehaviour.Properties.of().sound(SoundType.WOOD)
+            BlockBehaviour.Properties.ofFullCopy(Blocks.BOOKSHELF)
+    );
+
+    public static final Block WET_PULP = register(
+            ModBlockItemIds.WET_PULP,
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)
+    );
+
+    public static final Block DENSE_PULP = register(
+            ModBlockItemIds.DENSE_PULP,
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE)
+    );
+
+    public static final Block METAMORPHIC_PULP = register(
+            ModBlockItemIds.METAMORPHIC_PULP,
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE)
     );
 
     public static final Block THICK_ICHOR = register(

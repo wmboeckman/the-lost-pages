@@ -44,6 +44,9 @@ public class TheLostPagesDataGenerator implements DataGeneratorEntrypoint {
         @Override
         public void generateTranslations(HolderLookup.Provider holderLookup, TranslationBuilder translationBuilder) {
             translationBuilder.add("block."+ TheLostPages.MOD_ID +".lost_bookshelf", "Strange Bookshelf");
+            translationBuilder.add("block."+ TheLostPages.MOD_ID +".wet_pulp", "Wet Pulp");
+            translationBuilder.add("block."+ TheLostPages.MOD_ID +".dense_pulp", "Dense Pulp");
+            translationBuilder.add("block."+ TheLostPages.MOD_ID +".metamorphic_pulp", "Metamorphic Pulp");
 
             translationBuilder.add("block."+ TheLostPages.MOD_ID +".ichor", "Thick Ichor");
             translationBuilder.add("item."+ TheLostPages.MOD_ID +".ichor_bucket", "Bucket of Ichor");
@@ -78,9 +81,10 @@ public class TheLostPagesDataGenerator implements DataGeneratorEntrypoint {
 
         @Override
         public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
-//            blockStateModelGenerator.createTrivialBlock(ModBlocks.THICK_ICHOR, ModelTemplates.);
-
             blockStateModelGenerator.createTrivialBlock(ModBlocks.LOST_BOOKSHELF, TexturedModel.COLUMN_ALT);
+            blockStateModelGenerator.createTrivialBlock(ModBlocks.WET_PULP, TexturedModel.CUBE);
+            blockStateModelGenerator.createTrivialBlock(ModBlocks.DENSE_PULP, TexturedModel.CUBE);
+            blockStateModelGenerator.createTrivialBlock(ModBlocks.METAMORPHIC_PULP, TexturedModel.CUBE);
         }
 
         @Override

@@ -18,6 +18,9 @@ public class ModBlockItemIds {
     }
 
     public static final BlockItemId LOST_BOOKSHELF = create_block_item("lost_bookshelf");
+    public static final BlockItemId WET_PULP = create_block_item("wet_pulp");
+    public static final BlockItemId DENSE_PULP = create_block_item("dense_pulp");
+    public static final BlockItemId METAMORPHIC_PULP = create_block_item("metamorphic_pulp");
 
     public static final ResourceKey<Block> THICK_ICHOR = create_block("ichor");
 }
