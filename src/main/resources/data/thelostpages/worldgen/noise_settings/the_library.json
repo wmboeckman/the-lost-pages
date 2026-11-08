@@ -1,6 +1,6 @@
 {
   "sea_level": 55,
-  "aquifers_enabled": false,
+  "aquifers_enabled": true,
   "default_block": {
     "Name": "thelostpages:metamorphic_pulp"
   },
@@ -21,7 +21,7 @@
   },
   "noise_router": {
     "barrier": 0,
-    "fluid_level_floodedness": 0,
+    "fluid_level_floodedness": -1.0,
     "fluid_level_spread": 0,
     "lava": 0,
     "vein_toggle": 0,
@@ -33,8 +33,12 @@
     "depth": 0,
     "erosion": 0,
     "ridges": 0,
-    "preliminary_surface_level": 0,
-    "final_density": "thelostpages:plateau_ravines"
+    "preliminary_surface_level": "thelostpages:prelim_surface",
+    "final_density": {
+      "type": "minecraft:min",
+      "argument1": "thelostpages:plateau_ravines",
+      "argument2": "thelostpages:webbed_caves"
+    }
   },
   "spawn_target": [],
   "surface_rule": {
