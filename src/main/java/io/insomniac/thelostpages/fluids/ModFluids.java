@@ -1,6 +1,5 @@
-package io.insomniac.thelostpages;
+package io.insomniac.thelostpages.fluids;
 
-import io.insomniac.thelostpages.fluids.ThickIchorFluid;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;

@@ -1,6 +1,6 @@
 package io.insomniac.thelostpages.client;
 
-import io.insomniac.thelostpages.ModFluids;
+import io.insomniac.thelostpages.fluids.ModFluids;
 import io.insomniac.thelostpages.TheLostPages;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;

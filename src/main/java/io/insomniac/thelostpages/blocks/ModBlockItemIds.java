@@ -1,5 +1,6 @@
-package io.insomniac.thelostpages;
+package io.insomniac.thelostpages.blocks;
 
+import io.insomniac.thelostpages.TheLostPages;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.Identifier;

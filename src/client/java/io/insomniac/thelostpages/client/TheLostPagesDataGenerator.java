@@ -1,6 +1,9 @@
 package io.insomniac.thelostpages.client;
 
 import io.insomniac.thelostpages.*;
+import io.insomniac.thelostpages.blocks.ModBlocks;
+import io.insomniac.thelostpages.fluids.ModFluids;
+import io.insomniac.thelostpages.items.ModItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;

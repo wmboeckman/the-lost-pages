@@ -1,5 +1,8 @@
 package io.insomniac.thelostpages;
 
+import io.insomniac.thelostpages.blocks.ModBlocks;
+import io.insomniac.thelostpages.fluids.ModFluids;
+import io.insomniac.thelostpages.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

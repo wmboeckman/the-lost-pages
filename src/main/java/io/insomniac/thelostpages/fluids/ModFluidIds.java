@@ -1,5 +1,6 @@
-package io.insomniac.thelostpages;
+package io.insomniac.thelostpages.fluids;
 
+import io.insomniac.thelostpages.TheLostPages;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;

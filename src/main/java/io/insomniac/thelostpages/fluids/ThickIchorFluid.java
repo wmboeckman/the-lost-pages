@@ -1,8 +1,7 @@
 package io.insomniac.thelostpages.fluids;
 
-import io.insomniac.thelostpages.ModBlocks;
-import io.insomniac.thelostpages.ModFluids;
-import io.insomniac.thelostpages.ModItems;
+import io.insomniac.thelostpages.blocks.ModBlocks;
+import io.insomniac.thelostpages.items.ModItems;
 import io.insomniac.thelostpages.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

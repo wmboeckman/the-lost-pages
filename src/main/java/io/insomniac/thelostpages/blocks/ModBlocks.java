@@ -1,6 +1,6 @@
-package io.insomniac.thelostpages;
+package io.insomniac.thelostpages.blocks;
 
-import io.insomniac.thelostpages.blocks.LostBookshelf;
+import io.insomniac.thelostpages.fluids.ModFluids;
 import io.insomniac.thelostpages.fluids.ThickIchorFluid;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
@@ -13,7 +13,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.function.Function;

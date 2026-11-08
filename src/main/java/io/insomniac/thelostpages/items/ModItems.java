@@ -1,5 +1,6 @@
-package io.insomniac.thelostpages;
+package io.insomniac.thelostpages.items;
 
+import io.insomniac.thelostpages.fluids.ModFluids;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.registry.CompostableRegistry;
 import net.fabricmc.fabric.api.registry.FuelValueEvents;
