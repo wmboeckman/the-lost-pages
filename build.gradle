@@ -1,3 +1,6 @@
+//file:noinspection GrUnresolvedAccess
+//file:noinspection GroovyAssignabilityCheck
+
 plugins {
     id 'net.fabricmc.fabric-loom' version '1.17.17'
     id 'maven-publish'
@@ -35,6 +38,7 @@ repositories {
     // for more information about repositories.
     exclusiveContent {
         forRepository {
+            //noinspection ForeignDelegate
             maven {
                 name = "Modrinth"
                 url = "https://api.modrinth.com/maven"

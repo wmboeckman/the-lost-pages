@@ -1,12 +1,76 @@
 {
-  "carvers": [],
+  "has_precipitation": true,
+  "temperature": 0.7,
   "downfall": 0.5,
   "effects": {
-    "water_color": "#3f76e4"
+    "ambient_sound": "ambient.basalt_deltas.loop",
+    "mood_sound": {
+      "sound": "ambient.soul_sand_valley.mood",
+      "tick_delay": 6000,
+      "offset": 8,
+      "block_search_extent": 2
+    },
+    "additions_sound": {
+      "sound": "ambient.soul_sand_valley.additions",
+      "tick_chance": 0.0111
+    },
+    "music": [
+      {
+        "weight": 1,
+        "data": {
+          "sound": "music.overworld.deep_dark",
+          "min_delay": 12000,
+          "max_delay": 24000,
+          "replace_current_music": true
+        }
+      }
+    ],
+    "particle": {
+      "options": {
+        "type": "white_ash"
+      },
+      "probability": 0.006
+    },
+    "foliage_color": 10387789,
+    "grass_color": 9470285,
+    "sky_color": 7972607,
+    "fog_color": 817770,
+    "water_color": 4159204,
+    "water_fog_color": 329011
   },
-  "features": [],
-  "has_precipitation": false,
+  "attributes": {
+    "minecraft:visual/fog_start_distance": {
+      "modifier": "override",
+      "argument": 10
+    },
+    "minecraft:visual/fog_end_distance": {
+      "modifier": "override",
+      "argument": 50
+    }
+  },
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
   "spawn_costs": {},
-  "spawners": {},
-  "temperature": 0.5
+  "carvers": [],
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    ["thelostpages:library_spindles"],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ]
 }

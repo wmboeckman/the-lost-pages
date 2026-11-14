@@ -1,6 +1,7 @@
 package io.insomniac.thelostpages;
 
 import io.insomniac.thelostpages.blocks.ModBlocks;
+import io.insomniac.thelostpages.entities.ModEntityTypes;
 import io.insomniac.thelostpages.fluids.ModFluids;
 import io.insomniac.thelostpages.items.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -18,5 +19,6 @@ public class TheLostPages implements ModInitializer {
         ModItems.initialize();
         ModBlocks.initialize();
         ModFluids.initialize();
+        ModEntityTypes.initialize();
     }
 }
